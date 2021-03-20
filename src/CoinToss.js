@@ -40,11 +40,19 @@ class CoinToss extends Component {
     async handleOpenModal() {
 
         await new Promise(r => setTimeout(r, 2000));
-
+        var resultMessage = '';
+        console.log(this.state.total);
+        if (this.state.total > 100) {
+            resultMessage = 'Congras you win more than you lose: you total is $' + parseInt(this.state.total) + '.';
+        }
+        else if (this.state.total < 1) {
+            resultMessage = 'You are broke !! you have $' + parseInt(this.state.total) + '.';
+        } else {
+            resultMessage = 'Tough luck you lose some money, you have $' + parseInt(this.state.total) + + 'left.';
+        }
         this.setState({
             showModal: true,
-            message: (this.state.total > 100) ? 'Congras you win more than you lose: you total is $' + this.state.total
-                : 'Tough luck you lose some money, you have $' + this.state.total + ' left',
+            message: resultMessage,
         });
         this.reset();
 
@@ -95,6 +103,9 @@ class CoinToss extends Component {
                     result = parseInt(this.state.total) - parseInt(this.state.bet);
                 }
             }
+            if (result <= 0) {
+                this.handleOpenModal();
+            }
             this.setState(st => ({
                 frontFace: changeFace === heads ? this.props.coinFace[0] : this.props.coinFace[1],
                 backFace: changeFace === tails ? this.props.coinFace[1] : this.props.coinFace[0],
@@ -111,10 +122,7 @@ class CoinToss extends Component {
 
 
         if (this.state.flips >= 9) {
-            console.log("count reset");
             this.handleOpenModal();
-
-
         }
     }
 
