@@ -43,8 +43,8 @@ class CoinToss extends Component {
 
         this.setState({
             showModal: true,
-            message: (this.state.total > 100) ? 'Congras you win more than you lose: you total is ' + this.state.total
-                : 'Tough luck you lose some money, you have ' + this.state.total + ' left',
+            message: (this.state.total > 100) ? 'Congras you win more than you lose: you total is $' + this.state.total
+                : 'Tough luck you lose some money, you have $' + this.state.total + ' left',
         });
         this.reset();
 
@@ -150,7 +150,7 @@ class CoinToss extends Component {
         return (
             <div className="CoinToss">
                 <h1>Coin Toss</h1>
-                <h4 style={{ color: 'red' }} >This is way to practice stock trading as chance of landing on head is 60%, you have 10 tries to win as much as you can.</h4>
+                <h4 style={{ color: 'red' }} >Given a way to practice risk as chance of landing on head is 60%, you have 10 tries to win as much as you can.</h4>
                 <div className='flip-coin'>
                     <div className={flipCoinInner}>
                         <div className='flip-coin-front'>
@@ -181,10 +181,10 @@ class CoinToss extends Component {
 
                 <Modal
                     isOpen={this.state.showModal}
-                    contentLabel="Minimal Modal Example"
+                    contentLabel="Finish"
                 >
                     <h2> {this.state.message}</h2>
-                    <button onClick={this.handleCloseModal}>Close Modal</button>
+                    <button onClick={this.handleCloseModal}>Close Me</button>
                 </Modal>
 
                 <button onClick={this.reset}>Reset</button>
