@@ -157,8 +157,8 @@ class CoinToss extends Component {
 
         return (
             <div className="CoinToss">
-                <h1>Coin Toss</h1>
-                <h4 style={{ color: 'red' }} >Given a way to practice risk as chance of landing on head is 60%, you have 10 tries to win as much as you can.</h4>
+                <h2 style={{ color: 'CadetBlue' }}>Coin Toss</h2>
+                <h4 style={{ color: 'OrangeRed' }} >Given a way to practice risk management as chances of landing on head are 60%, you have 10 tries to win as much as you can.</h4>
                 <div className='flip-coin'>
                     <div className={flipCoinInner}>
                         <div className='flip-coin-front'>
@@ -171,7 +171,7 @@ class CoinToss extends Component {
                 </div>
 
                 <p></p>
-                <h2>Bet Amount: ${this.state.bet}</h2>
+                <h2 style={{ color: 'CadetBlue' }}>Bet Amount: ${this.state.bet}</h2>
                 <div>
                     <RangeStepInput
                         min={1} max={100}
@@ -186,17 +186,20 @@ class CoinToss extends Component {
                 <button disabled={this.state.flipAnimaiton} onClick={this.tossTail}>
                     {this.state.flipAnimaiton === false ? 'TAIL' : 'Flipping...'}
                 </button>
-
-                <Modal
-                    isOpen={this.state.showModal}
-                    contentLabel="Finish"
-                >
-                    <h2> {this.state.message}</h2>
-                    <button onClick={this.handleCloseModal}>Close Me</button>
-                </Modal>
+                <div>
+                    <Modal
+                        isOpen={this.state.showModal}
+                        contentLabel="Finish"
+                    >
+                        <h3 style={{ color: 'SteelBlue' }}> {this.state.message}</h3>
+                        <p></p>
+                        <p></p>
+                        <button onClick={this.handleCloseModal}>Close Me</button>
+                    </Modal>
+                </div>
 
                 <button onClick={this.reset}>Reset</button>
-                <h2>Your Wallet: ${this.state.total}</h2>
+                <h2 style={{ color: 'OrangeRed' }}>Your Wallet: ${this.state.total}</h2>
                 <p>Out of {this.state.flips}, there has been {this.state.heads} heads and {this.state.tails} tails.</p>
 
 
