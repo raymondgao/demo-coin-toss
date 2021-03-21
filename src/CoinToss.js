@@ -43,12 +43,12 @@ class CoinToss extends Component {
         var resultMessage = '';
         console.log(this.state.total);
         if (this.state.total > 100) {
-            resultMessage = 'Congras you win more than you lose: you total is $' + parseInt(this.state.total) + '.';
+            resultMessage = 'Congras you win more than you lose: you total is $' + parseInt(this.state.total) + ' .';
         }
         else if (this.state.total < 1) {
-            resultMessage = 'You are broke !! you have $' + parseInt(this.state.total) + '.';
+            resultMessage = 'You are broke !! you have $' + parseInt(this.state.total) + ' .';
         } else {
-            resultMessage = 'Tough luck you lose some money, you have $' + parseInt(this.state.total) + + 'left.';
+            resultMessage = 'Tough luck you lose some money, you have $' + parseInt(this.state.total) + ' left.';
         }
         this.setState({
             showModal: true,
