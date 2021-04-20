@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test your English Skill</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="quoteText">
+            <li id="quote"></li>
+            <li id="translate_quote" style="text-align: right"></li>
+            <li>
+		<span class="md-chip" onclick="translateText()" id="translate"></span>
+                <span class="md-chip" onclick="getQuote()" id="getQuote">
+                    <i class="fa fa-sync" style="margin-right:1rem"></i>Get Another Quote</span>
+            </li>
+        </div>
+    </div>
+    <script src="main.js"></script>
+	 <div class="container">
+
+            <div class="app">
+                <div class="input-single">
+		    <div id="note-textarea"></div>
+                    <!--<textarea id="note-textarea" placeholder="Create a new note by typing or using voice recognition." cols="120" rows="4"></textarea>-->
+		<div id="snackbar">Some text some message..</div>  
+                </div>
+                <button class="btn_start" id="start-record-btn" title="Start" style="float: left;">Start</button>
+		&nbsp;&nbsp;
+                <button class="btn_speak" id="speak-record-btn" title="Listen" style="float: right;"  onclick="window.speechSynthesis.speak(readOutLoud(currentQuote));">Listen</button>
+                <p id="recording-instructions">Press the <strong>Start </strong> button and allow access.</p>
+
+                <h3></h3>
+                <ul id="notes">
+                    <li>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="jsdiff.js"></script>
+        <script src="script.js"></script>
+
+
+  
+</body>
+<footer>
+</footer>
+
+</html>

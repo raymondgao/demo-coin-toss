@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="content-language" content="en-EN" />
+
+  <title>JEELIZ FACE FILTER : TIGER DEMO</title>
+
+  <!-- INCLUDE JEELIZ FACEFILTER SCRIPT -->
+  <script src="dist/jeelizFaceFilter.js"></script>
+
+  <!-- INCLUDE THREE.JS -->
+  <script src="dist/three.min.js"></script>
+
+  <script src="dist/Tween.min.js"></script>
+
+  <!-- INCLUDE JEELIZRESIZER -->
+  <script src="dist/JeelizResizer.js"></script>
+
+  <!-- INCLUDE JEELIZTHREEJSHELPER -->
+  <script src="dist/JeelizThreejsHelper.js"></script>
+
+  <!-- INCLUDE DEMO SCRIPT -->
+  <script src="demo_tiger.js"></script>
+
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <script src="https://www.webrtc-experiment.com/RecordRTC.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="main.js" async></script>
+</head>
+
+<body onload="main()" style='color: white'>
+  <div style="text-align:center;position:fixed;background:white;width:100%;">>
+    <button id="record">Start Recording</button>
+    <button id="play" disabled>Play</button>
+    <button id="download" disabled>Download</button>
+  </div>
+
+  <div id="container">
+    <canvas margin-top="90px" margin-left="auto" margin-right="auto" padding-left="0" padding-right="0" width="600"
+      height="600" id='jeeFaceFilterCanvas' z-index="0" top="800px" position="relative"></canvas>
+    <div>
+      <div id="container" text-align="center">
+        <!--<canvas id="video_canvas" display="inline"  z-index="1" position="absolute" margin="auto"   width="600" height="600" ></canvas>-->
+        <video id="recorded" playsinline loop></video>
+
+      </div>
+</body>
+
+</html>
